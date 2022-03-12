@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Transactions 🎈</title>
+  {% include 'style.html' %}
+</head>
+<body>
+  <div class="top">
+    <h1>Transactions 🎈</h1>
+    <table>
+      <thead><tr><td>from</td><td>to</td><td>amount</td><td>time</td></tr></thead>
+      <tbody>
+        {% for thing in transactions %}
+        <tr>
+          {% for v in thing %}
+          <td>
+            {% if forloop.index == 4 %}
+            {{v | date: "%c"}}
+            {% else %}
+            {{v}}
+            {%endif%}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

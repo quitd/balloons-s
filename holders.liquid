@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Holders 🎈</title>
+  {% include 'style.html' %}
+</head>
+<body>
+  <div class="top">
+    <h1>Holders 🎈</h1>
+    <table>
+      <thead><tr><td>username</td><td>amount</td></tr></thead>
+      <tbody>
+        {% for thing in holders %}
+        <tr>
+          {% for v in thing %}
+          <td>
+            {{v}}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
